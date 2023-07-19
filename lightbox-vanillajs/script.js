@@ -1,58 +1,96 @@
-const rightSwipe = document.getElementById('rightIcon');
-const leftSwipe = document.getElementById('leftIcon');
+import { imagesData } from './data.js';
 
-const preview = document.getElementById('preview')
-const thumbnailList = document.getElementById('thumbImgId')
+var slideIndex = 1;
+const imageGalleryContainer = document.getElementById('imageGallery');
+const thumbnailGalleryContainer = document.getElementById('thumbnailGallery');
 
-const img = document.createElement('img');
-
-
-let counter = 0;
-let images = [];
-let thumbnails = []
-let imagesMaxCount = 10;
-
-for (let i = 0; i < imagesMaxCount; i++) {
-    images.push(`http://picsum.photos/id/${i + 29}/600/360`);
-    thumbnails.push(`http://picsum.photos/id/${i + 29}/50`)
+function moveSlide(n) {
+    showSlides(slideIndex += n);
 }
 
-console.log('images',images);
-console.log('thumbnails',thumbnails);
-
-console.log('preview', preview);
-preview.appendChild(img);
-
-img.src = images[counter];
-img.setAttribute('class', 'image')
-
-
-thumbnailList.appendChild(img);
-console.log('thumbnailList.appendChild', thumbnailList);
-
-img.src = thumbnails[counter];
-img.setAttribute('class', 'thumbImg');
-
-function nextSlide() {
-    counter < (images.length - 1) ? counter++ : counter = 0;
-    img.src = images[counter];
+function currentSlide(n) {
+    showSlides(slideIndex = n);
 }
 
-function prevSlide() {
-    if (counter <= 0) {
-        counter = images.length - 1;
-    } else {
-        counter--;
+function fetchImages() {
+    imagesData.forEach((imageInfo) => {
+        const imageContainer = document.createElement('div');
+        imageContainer.classList.add('slides');
+
+        const imageElement = document.createElement('img');
+        imageElement.src = imageInfo.imgSrc;
+
+        const captionElement = document.createElement('div');
+        captionElement.classList.add('caption-container');
+
+        const captionTitle = document.createElement('h1');
+        captionTitle.textContent = imageInfo.imgTitle;
+
+        const captionDescription = document.createElement('p');
+        captionDescription.textContent = imageInfo.imgDesc;
+
+        captionElement.appendChild(captionTitle);
+        captionElement.appendChild(captionDescription);
+
+        imageContainer.appendChild(imageElement);
+        imageContainer.appendChild(captionElement);
+
+        imageGalleryContainer.appendChild(imageContainer);
+    });
+
+    imagesData.forEach((imageInfo, index) => {
+        const thumbnailContainer = document.createElement('div');
+        thumbnailContainer.classList.add('column');
+
+        const imageElement = document.createElement('img');
+        imageElement.classList.add('slide-thumbnail');
+        imageElement.src = imageInfo.imgSrc;
+
+
+        thumbnailContainer.appendChild(imageElement);
+
+        thumbnailGalleryContainer.appendChild(thumbnailContainer);
+
+        imageElement.addEventListener('click', () => {
+            currentSlide(index + 1);
+        });
+
+    })
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("slides");
+    var dots = document.getElementsByClassName("slide-thumbnail");
+
+    slideIndex = (n % slides.length);
+    if (slideIndex === 0) {
+        slideIndex = slides.length;
     }
-    console.log(counter);
 
-    img.src = images[counter];
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+
+    dots[slideIndex - 1].className += " active";
 }
 
-rightSwipe.addEventListener('click', () => {
-    nextSlide();
-})
+window.onload = () => {
+    fetchImages();
+    showSlides(slideIndex);
 
-leftSwipe.addEventListener('click', () => {
-    prevSlide();
-})
+    const prevButton = document.querySelector(".prevContainer");
+    const nextButton = document.querySelector(".nextContainer");
+
+    prevButton.addEventListener("click", () => {
+        moveSlide(-1);
+    });
+
+    nextButton.addEventListener("click", () => {
+        moveSlide(1);
+    });
+}

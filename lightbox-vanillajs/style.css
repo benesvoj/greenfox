@@ -31,6 +31,9 @@ img {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     padding: 80px;
     width: 50%;
@@ -126,13 +129,15 @@ img {
     clear: both;
 }
 
-/* Six columns side by side */
+.thumbnail {
+    width: 80%;
+}
+
 .column {
     float: left;
     width: 16.66%;
 }
 
-/* Add a transparency effect for thumbnail images */
 .slide-thumbnail {
     width: 100%;
     opacity: 0.6;
@@ -144,20 +149,20 @@ img {
     opacity: 1;
 }
 
-.gray-container {
+.caption-container {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(34, 24, 24, 0.7);
     color: #fff;
     padding: 4px 16px;
     width: 100%;
 }
 
-.gray-container h1 {
+.caption-container h1 {
     font-size: 14px;
 }
 
-.gray-container p {
+.caption-container p {
     font-size: 10px;
 }

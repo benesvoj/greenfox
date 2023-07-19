@@ -12,97 +12,23 @@
     <div class="layout">
         <div class="container">
             <div class="preview">
-                <div class="prevContainer" onclick="moveSlide(-1)">
-                    <a class="prev"></a>
+                <div class="prevContainer">
+                    <div class="prev"></div>
                 </div>
                 <div class="holder" id="imageGallery">
-                    <div class="slides" >
-                        <img src="http://picsum.photos/id/29/600/360" alt=" " />
-                        <div class="gray-container">
-                            <h1 class="photo-title">Test</h1>
-                            <p class="photo-description">abcd</p>
-                        </div>
-                    </div>
-                    <div class="slides">
-                        <img src="http://picsum.photos/id/30/600/360" alt=" " />
-                    </div>
-                    <div class="slides">
-                        <img src="http://picsum.photos/id/31/600/360" alt=" " />
-                    </div>
-                    <div class="slides">
-                        <img src="http://picsum.photos/id/32/600/360" alt=" " />
-                    </div>
-                    <div class="slides">
-                        <img src="http://picsum.photos/id/33/600/360" alt=" " />
-                    </div>
-                    <div class="slides">
-                        <img src="http://picsum.photos/id/34/600/360" alt=" " />
-                    </div>
-                    <div class="slides">
-                        <img src="http://picsum.photos/id/35/600/360" alt=" " />
-                    </div>
-                    <div class="slides">
-                        <img src="http://picsum.photos/id/36/600/360" alt=" " />
-                    </div>
-                    <div class="slides">
-                        <img src="http://picsum.photos/id/37/600/360" alt=" " />
-                    </div>
-                    <div class="slides">
-                        <img src="http://picsum.photos/id/38/600/360" alt=" " />
-                    </div>
                 </div>
-                <div class="nextContainer" onclick="moveSlide(1)">
-                    <a class="next"></a>
+                <div class="nextContainer">
+                    <div class="next"></div>
                 </div>
             </div>
             <div class="thumbnail">
-                <div class="row">
-                    <div class="column">
-                        <img class="slide-thumbnail" src="http://picsum.photos/id/29/600/360" alt=" "
-                            onclick="currentSlide(1)" />
-                    </div>
-                    <div class="column">
-                        <img class="slide-thumbnail" src="http://picsum.photos/id/30/600/360" alt=" "
-                            onclick="currentSlide(2)" />
-                    </div>
-                    <div class="column">
-                        <img class="slide-thumbnail" src="http://picsum.photos/id/31/600/360" alt=" "
-                            onclick="currentSlide(3)" />
-                    </div>
-                    <div class="column">
-                        <img class="slide-thumbnail" src="http://picsum.photos/id/32/600/360" alt=" "
-                            onclick="currentSlide(4)" />
-                    </div>
-                    <div class="column">
-                        <img class="slide-thumbnail" src="http://picsum.photos/id/33/600/360" alt=" "
-                            onclick="currentSlide(5)" />
-                    </div>
-                    <div class="column">
-                        <img class="slide-thumbnail" src="http://picsum.photos/id/34/600/360" alt=" "
-                            onclick="currentSlide(6)" />
-                    </div>
-                    <div class="column">
-                        <img class="slide-thumbnail" src="http://picsum.photos/id/35/600/360" alt=" "
-                            onclick="currentSlide(7)" />
-                    </div>
-                    <div class="column">
-                        <img class="slide-thumbnail" src="http://picsum.photos/id/36/600/360" alt=" "
-                            onclick="currentSlide(8)" />
-                    </div>
-                    <div class="column">
-                        <img class="slide-thumbnail" src="http://picsum.photos/id/37/600/360" alt=" "
-                            onclick="currentSlide(9)" />
-                    </div>
-                    <div class="column">
-                        <img class="slide-thumbnail" src="http://picsum.photos/id/38/600/360" alt=" "
-                            onclick="currentSlide(10)" />
-                    </div>
-                </div>
+                <div class="row" id="thumbnailGallery"></div>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="script3.js"></script>
+    <script type="module" src="data.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>

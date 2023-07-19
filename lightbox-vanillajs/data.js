@@ -1,4 +1,4 @@
-export const photosData = [
+export const imagesData = [
     {
         imgSrc: "http://picsum.photos/id/29/600/360",
         imgTitle: "Picture 1",
@@ -49,4 +49,4 @@ export const photosData = [
         imgTitle: "Picture 10",
         imgDesc: "Description for picture 10",
     }
-]
+];
