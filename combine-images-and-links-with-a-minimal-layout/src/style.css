@@ -1,0 +1,18 @@
+.container {
+  font-family: 'Sen', sans-serif;
+}
+
+img {
+  width: 150px
+}
+
+.imgWithLink {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  align-items: center;
+}
+
+.section {
+  display: flex;
+}

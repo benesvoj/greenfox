@@ -1,0 +1,28 @@
+main {
+  width: 500px;
+}
+
+h1 {
+  color: red;
+}
+
+h2 {
+  color: purple;
+}
+
+p {
+  font-size: 18px;
+}
+
+ol {
+  list-style-type: upper-roman;
+}
+
+.ordered-list {
+  color: violet;
+  text-decoration: underline;
+}
+.ol-black {
+  color: #000000;
+  text-decoration: underline;
+}

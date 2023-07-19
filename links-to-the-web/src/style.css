@@ -1,0 +1,16 @@
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: green;
+  font-weight: bold;
+  font-family: 'Sen', sans-serif;
+  padding-bottom: 10px;
+}
+
+a:hover {
+  color: lime;
+  text-decoration: none;
+}

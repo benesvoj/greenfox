@@ -1,0 +1,157 @@
+html {
+  scroll-padding-top: 100px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background: silver;
+  color: navy;
+}
+
+.layout {
+  width: 80%;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.rowContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+  gap: 20px;
+}
+
+.firstColumn {
+  width: 300px;
+}
+.secondColumn {
+  flex: 1;
+}
+
+blockquote {
+  position: relative;
+  z-index: -1;
+  background: grey;
+  color: #ffffff;
+  margin: 0;
+  font-size: 3em;
+  border-radius: 4px;
+}
+
+blockquote,
+.pageTitle {
+  font-family: "Poller One", cursive;
+}
+
+blockquote::before {
+  content: "\201C";
+  font-size: 4em;
+  line-height: 0.2em;
+  vertical-align: -0.5em;
+  position: relative;
+  top: 30px;
+}
+
+blockquote p {
+  font-family: "Libre Baskerville", serif;
+  color: #fff;
+  margin-block: 0;
+  margin-inline: 0;
+  padding: 20px;
+}
+
+.pageTitle {
+  color: #222;
+  background-image: url("https://raw.githubusercontent.com/green-fox-academy/myfirstapp-syllabus/master/assets/first-website-header.png");
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.pageTitleText {
+  position: absolute;
+  z-index: 1;
+  line-height: 0.5;
+  margin-left: 4em;
+  margin-bottom: 2em;
+}
+
+.pageTitleText h2 {
+  font-size: 32px;
+  margin-left: -0.5em;
+  margin-block: 0.4em;
+}
+
+.pageTitleText h1 {
+  font-size: 60px;
+  line-height: 1;
+  margin-block: 0;
+}
+
+p,
+ul {
+  font-family: "Nunito Sans", sans-serif;
+  color: #222;
+}
+
+ul {
+  list-style-type: square;
+  line-height: 1.5;
+}
+
+h2.sections {
+  text-transform: uppercase;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  margin: 50px 0 0 0;
+  color: maroon;
+}
+
+.dash {
+  height: 2px;
+  width: 70%;
+  background: maroon;
+  margin: 0 0 50px 0;
+}
+
+h3 {
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 1.5;
+  margin-block: 0.2em;
+}
+
+h4 {
+  font-family: "Merriweather", serif;
+  font-size: 15px;
+  font-style: italic;
+  margin-block: 0.2em;
+}
+
+.navigation {
+  height: 100px;
+  width: 80%;
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  top: 0;
+  position: fixed;
+  z-index: 2;
+}
+
+.navigation a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+}

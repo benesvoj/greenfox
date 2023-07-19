@@ -1,0 +1,38 @@
+.layout {
+  padding: 0;
+  margin: 0;
+}
+
+.navigation {
+  background: purple;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.item {
+  height: 30px;
+  background: cyan;
+  margin: 10px;
+}
+.first, .third {
+  width: 80px;
+}
+.second {
+  width: 120px;
+}
+
+.workspace {
+  display: flex;
+}
+
+.leftSide {
+  background: yellow;
+  height: 500px;
+  flex-grow: 4;
+}
+
+.rightSide {
+  background: lime;
+  height: 500px;
+  flex-grow: 1;
+}

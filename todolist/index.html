@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap"
+        rel="stylesheet">
+    <title>My Simple Todo list</title>
+</head>
+
+<body>
+    <h1>My Simple Todo list</h1>
+
+    <a href="../index.html">Return home</a>
+
+    <div class="todoList">
+        <div class="container task_list_empty">
+            <h2>Todos</h2>
+            <div>
+                <form id="new_task_form">
+                    <input type="text" name="new_task_input" id="new_task_input" placeholder="Create New Task"
+                        value="" />
+                    <button id="new_task_input_btn" type="submit">Add</button>
+                </form>
+            </div>
+            <section class="tasks">
+                <ul id="tasksList"></ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
