@@ -19,6 +19,7 @@ function fetchImages() {
 
         const imageElement = document.createElement('img');
         imageElement.src = imageInfo.imgSrc;
+        imageElement.alt = imageInfo.imgTitle;
 
         const captionElement = document.createElement('div');
         captionElement.classList.add('caption-container');
@@ -45,10 +46,15 @@ function fetchImages() {
         const imageElement = document.createElement('img');
         imageElement.classList.add('slide-thumbnail');
         imageElement.src = imageInfo.imgSrc;
+        imageElement.alt = imageInfo.imgTitle;
 
+        const captionElement = document.createElement('h2');
+        captionElement.classList.add('caption-thumbnail');
+        captionElement.textContent = imageInfo.imgTitle;
+        
 
         thumbnailContainer.appendChild(imageElement);
-
+        thumbnailContainer.appendChild(captionElement);
         thumbnailGalleryContainer.appendChild(thumbnailContainer);
 
         imageElement.addEventListener('click', () => {
@@ -58,10 +64,31 @@ function fetchImages() {
     })
 }
 
+function showThumbnailCaption(index) {
+    const captionContainers = document.querySelectorAll(".caption-thumbnail");
+    captionContainers[index].style.display = "block";
+}
+
+function hideThumbnailCaption(index) {
+    const captionContainers = document.querySelectorAll(".caption-thumbnail");
+    captionContainers[index].style.display = "none";
+}
+
+function addThumbnailHoverEffect(index) {
+    const thumbnailContainers = document.querySelectorAll(".column");
+    thumbnailContainers[index].classList.add("thumbnail-hover");
+    titleElement.style.display = "block";
+}
+
+function removeThumbnailHoverEffect(index) {
+    const thumbnailContainers = document.querySelectorAll(".column");
+    thumbnailContainers[index].classList.remove("thumbnail-hover");
+}
+
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("slides");
-    var dots = document.getElementsByClassName("slide-thumbnail");
+    var dots = document.getElementsByClassName("column");
 
     slideIndex = (n % slides.length);
     if (slideIndex === 0) {
@@ -92,5 +119,23 @@ window.onload = () => {
 
     nextButton.addEventListener("click", () => {
         moveSlide(1);
+    });
+
+    const thumbnailContainers = document.querySelectorAll(".column");
+
+    thumbnailContainers.forEach((thumbnailContainer, index) => {
+        const titleElement = thumbnailContainer.querySelector("h2");
+
+        thumbnailContainer.addEventListener("mouseover", () => {
+            showThumbnailCaption(index);
+            addThumbnailHoverEffect(index);
+            titleElement.style.display = "block";
+        });
+
+        thumbnailContainer.addEventListener("mouseout", () => {
+            hideThumbnailCaption(index);
+            removeThumbnailHoverEffect(index);
+            titleElement.style.display = "none";
+        });
     });
 }
