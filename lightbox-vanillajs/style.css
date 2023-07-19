@@ -123,7 +123,7 @@ img {
 }
 
 .thumbnail {
-    width: 100%;
+    width: 50%;
 }
 
 .column {
@@ -188,8 +188,8 @@ img {
     position: absolute;
     white-space: nowrap;
     border-radius: 4px;
-    bottom: 10px;
-    left: 10px;
+    bottom: 15px;
+    left: 5px;
     background-color: rgb(133, 132, 132);
     padding: 5px;
     color: #FFFFFF;

@@ -77,7 +77,6 @@ function hideThumbnailCaption(index) {
 function addThumbnailHoverEffect(index) {
     const thumbnailContainers = document.querySelectorAll(".column");
     thumbnailContainers[index].classList.add("thumbnail-hover");
-    titleElement.style.display = "block";
 }
 
 function removeThumbnailHoverEffect(index) {
